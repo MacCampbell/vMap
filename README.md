@@ -4,7 +4,9 @@ A basic plot of Vietnam with R
 # Why
 A common thing I have to do is make a map for plotting sampling locations on. This map was created for the SEDES IJL workshop to make it more relevant to Vietmanese researchers. This creates a base map of our region of interest. I then demonstrate how to plot points and labels on it.
 
-![](./examples/baseMap.png)  
+basemap             |  basemap with cities
+:-------------------------:|:-------------------------:
+![](./examples/baseMap.png)  |  ![](./examples/scaledCities.png)
 
 The following packages are used.
 
