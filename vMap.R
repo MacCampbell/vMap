@@ -1,12 +1,13 @@
-library(raster)
+#library(raster)
 library(ggplot2)
 library(maps)
 library(mapdata)
-library(manipulate)
-library(lubridate)
-library(rgdal)
-library(raster)
-library(dplyr)
+library(ggrepel)
+#library(manipulate)
+#library(lubridate)
+#library(rgdal)
+#library(raster)
+#library(dplyr)
 
 world<-map_data("world")
 vietnam<-subset(world, region %in% c("Vietnam","Cambodia", "Laos", "China", "Thailand"))
@@ -52,3 +53,34 @@ ggplot() +
   coord_fixed(1) +
   #xlim(102, 110)+ylim(8,25)+
   coord_fixed(xlim = c(xmin, xmax), ylim = c(ymin, ymax))
+
+#How about some data?
+cities<-read.csv("./bigCities.csv")
+
+ggplot() + 
+  geom_polygon(data = vietnam, aes(x=long, y = lat, group = group), fill = NA, color = "black") +
+  geom_point(data=cities, aes(x=Longitude, y=Latitude), color="blue")+
+  xlab("Longitude")+
+  ylab("Latitude")+
+  theme_classic()+
+  theme(axis.text=element_text(size=10, family="Times"),
+        axis.title=element_text(size=12, face="bold", family="Times")) +
+  coord_fixed(1) +
+  #xlim(102, 110)+ylim(8,25)+
+  coord_fixed(xlim = c(xmin, xmax), ylim = c(ymin, ymax))
+
+# I want to make the size proportional to population and label, soo...
+
+ggplot() + 
+  geom_polygon(data = vietnam, aes(x=long, y = lat, group = group), fill = NA, color = "black") +
+  geom_point(data=cities, aes(x=Longitude, y=Latitude, size=Population), color="blue")+
+  geom_label_repel(data=cities, aes(x=Longitude, y=Latitude, label=City), force=5)+
+  xlab("Longitude")+
+  ylab("Latitude")+
+  theme_classic()+
+  theme(axis.text=element_text(size=10, family="Times"),
+        axis.title=element_text(size=12, face="bold", family="Times")) +
+  coord_fixed(1) +
+  #xlim(102, 110)+ylim(8,25)+
+  coord_fixed(xlim = c(xmin, xmax), ylim = c(ymin, ymax))
+
