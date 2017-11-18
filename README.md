@@ -85,4 +85,11 @@ I prepared a file with city locations and sizes, read in "bigCities.csv" and the
 
 I altered geom_point aes() and added geom_label_repel
 
+## Homework
+
+What is missing from this map? I think that it would be very nice to include a scale bar and compass.  Check out either https://github.com/3wen/legendMap or https://github.com/oswaldosantos/ggsn  
+
+You may be able to rather quickly include a legend. Although in my opinion, this example needs some tweaks to become prety enough to be publishable.
+
+![](./examples/legend.png)   
 

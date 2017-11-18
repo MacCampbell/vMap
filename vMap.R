@@ -84,3 +84,20 @@ ggplot() +
   #xlim(102, 110)+ylim(8,25)+
   coord_fixed(xlim = c(xmin, xmax), ylim = c(ymin, ymax))
 
+
+ggm1<-ggplot() + 
+  geom_polygon(data = vietnam, aes(x=long, y = lat, group = group), fill = NA, color = "black") +
+  geom_point(data=cities, aes(x=Longitude, y=Latitude, size=Population), color="blue")+
+  geom_label_repel(data=cities, aes(x=Longitude, y=Latitude, label=City), force=5)+
+  xlab("Longitude")+
+  ylab("Latitude")+
+  theme_classic()+
+  theme(axis.text=element_text(size=10, family="Times"),
+        axis.title=element_text(size=12, face="bold", family="Times")) +
+  coord_fixed(1) +
+  #xlim(102, 110)+ylim(8,25)+
+  coord_fixed(xlim = c(xmin, 114), ylim = c(ymin, ymax))+
+  scale_bar(lon = 110, lat = 7.5, 
+                           distance_lon = 200, distance_lat = 100, distance_legend = 50, 
+                           dist_unit = "km", arrow_length=300, arrow_distance=150)
+  
