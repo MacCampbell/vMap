@@ -89,7 +89,7 @@ I altered geom_point aes() and added geom_label_repel
 
 What is missing from this map? I think that it would be very nice to include a scale bar and compass.  Check out either https://github.com/3wen/legendMap or https://github.com/oswaldosantos/ggsn  
 
-You may be able to rather quickly include a legend. Although in my opinion, this example needs some tweaks to become prety enough to be publishable.
+You may be able to rather quickly include a legend. Although in my opinion, this example needs some tweaks to become pretty enough to be publishable.
 
 ![](./examples/legend.png)   
 
