@@ -17,7 +17,13 @@ The following packages are used.
 
 ## Blow by blow
 
-  *  Loading needed packages...
+  *  Loading needed packages...  
+  
+library(ggplot2)
+library(maps)
+library(mapdata)
+library(ggrepel)
+
   *  Get the map data, and let's take a look at it
 
 world<-map_data("world")
@@ -85,11 +91,17 @@ I prepared a file with city locations and sizes, read in "bigCities.csv" and the
 
 I altered geom_point aes() and added geom_label_repel
 
-## Homework
+## One thing you can also do is include a legend
 
 What is missing from this map? I think that it would be very nice to include a scale bar and compass.  Check out either https://github.com/3wen/legendMap or https://github.com/oswaldosantos/ggsn  
 
 You may be able to rather quickly include a legend. Although in my opinion, this example needs some tweaks to become pretty enough to be publishable.
 
 ![](./examples/legend.png)   
+
+---   
+
+John Doe provided us with a file of collection points of three species of _Mugil_, mugil.csv. Using what you have learned so far, can you create individual range maps of each species?
+
+![](./examples/mugil.png)  
 
