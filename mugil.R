@@ -53,7 +53,8 @@ ggplot() +
   facet_grid(Species ~ .)  
 dev.off()
 
-### What about plotting by each species by its own boundaries? Hmmm... This doesn't work yet.
+### What about plotting by each species by its own boundaries?
+## Hmmm... This works ok.
 
 species<-levels(reduced$Species)
 
@@ -70,9 +71,8 @@ xmx<-max(short$Longitude)+1
 ymn<-min(short$Latitude)-1
 ymx<-max(short$Latitude)+1
 
-pdf(file=paste("./examples/",sp,".pdf", sep=""))
 
-ggplot() + 
+reducedMap<-ggplot() + 
   geom_polygon(data = world, aes(x=long, y = lat, group = group), fill = "grey", color = "black") + 
   geom_point(data=short, aes(x=Longitude, y=Latitude, size=Count), fill=colorV[i], 
              shape=21, colour="black", alpha=0.5) +
@@ -81,10 +81,12 @@ ggplot() +
   theme_classic()+
   theme(axis.text=element_text(size=10, family="Times"),
         axis.title=element_text(size=12, face="bold", family="Times")) +
-  coord_fixed(1)+
+  coord_fixed(1.3)+
   coord_fixed(xlim = c(xmn, xmx), ylim = c(ymn, ymx))+
   labs(title = paste(sp))
 
+pdf(file=paste("./examples/",sp,".pdf", sep=""))
+print(reducedMap)
 dev.off()
 
 }
