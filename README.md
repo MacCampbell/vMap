@@ -101,11 +101,9 @@ You may be able to rather quickly include a legend. Although in my opinion, this
 
 ---   
 
-John Doe provided us with a file of collection points of three species of _Mugil_, mugil.csv. Using what you have learned so far, can you create individual range maps of each species? It is possible to facet the plots as below or print to separate bounds.  
+John Doe provided us with a file of collection points of three species of _Mugil_, mugil.csv. Using what you have learned so far, can you create individual range maps of each species? It is possible to facet the plots as below or print to separate bounds (shown in examples directory).
 
-points             | points proportional to sample size
-:-------------------------:|:-------------------------:
- ![](./examples/mugil.png)  |  ![](./examples/mugilMapSize.png)
+![](./examples/mugilMapSize.png)
 
  
 
